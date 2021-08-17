@@ -40,6 +40,10 @@ let todos = [
 
 app.get('/todos', (req, res) => res.send(todos));
 
+app.get('/' , (req, res) => {
+	res.send('Redux TODO app backend')
+})
+
 app.post('/todos', (req, res) => {
 	const todo = { title: req.body.title, id: nanoid(), completed: false };
 	todos.push(todo);
